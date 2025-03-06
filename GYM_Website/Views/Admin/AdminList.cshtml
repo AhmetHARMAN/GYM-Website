@@ -1,0 +1,144 @@
+﻿@model IEnumerable<LogAdmin>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!-- Site Metas -->
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link href="/images/about-img.png" rel="icon" type="image/x-icon" />
+	<title>Yahşi GYM</title>
+	<!-- slider stylesheet -->
+	<link rel="stylesheet" type="text/css"
+		  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+	<!-- bootstrap core css -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+	<!-- fonts style -->
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+		  rel="stylesheet" />
+	<!-- Custom styles for this template -->
+	<link href="/css/style.css" rel="stylesheet" />
+	<!-- responsive style -->
+	<link href="/css/responsive.css" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kullanıcı Listesi</title>
+	<style>
+		
+		body {
+			display: flex;
+			justify-content: center; /* Yatay merkezleme */
+			align-items: center; /* Dikey merkezleme */
+			height: 100vh; /* Tam sayfa yüksekliği */
+			margin: 0;
+			background-color: #f8bc1a;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 50%; /* Tablo genişliği */
+			background-color: #ffffff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		th, td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: left;
+		}
+
+		th {
+			background-color: #f4f4f4;
+		}
+
+		.header_section {
+			position: fixed; /* Navbar'ı sayfanın üst kısmına sabitle */
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 1000; /* Navbar'ı en üstte tut */
+			background-color: white; /* Arka plan rengi */
+		}
+
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		.button-container a:not(:last-child) {
+			margin-right: 660px; /* Sağ tarafta boşluk bırak */
+		}
+	</style>
+</head>
+<body>
+	<div class="hero_area">
+		<!-- header section strats -->
+		<header class="header_section">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg custom_nav-container">
+					<a class="navbar-brand" href="/Home/Anasayfa">
+						<img src="/images/logo.png" alt="" />
+						<span>
+							Yahşi GYM
+						</span>
+					</a>
+					
+					<div class="ml-auto">
+						<ul class="navbar-nav">
+							@if (User.Identity != null && User.Identity.IsAuthenticated)
+							{
+								<li class="nav-item">
+									<a class="nav-link">Hoş Geldiniz, @User.Identity.Name</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/Account/Admin">Çıkış Yap</a>
+								</li>
+							}
+							else
+							{@*
+							<li class="nav-item">
+							<a class="nav-link" href="/Account/Login">Giriş Yap</a>
+							</li>  *@
+							}
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+	</div>
+	<div id:"tbl">
+	<h1>Admin Listesi</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>İsim</th>
+				<th>Email</th>
+				<th>Şifre</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var admin in Model)
+			{
+				<tr>
+					<td>@admin.Kullanici_Ad</td>
+					<td>@admin.Email</td>
+					<td>@admin.Password</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+		<div class="button-container">
+			<a type="submit" href="/Admin/AdminList" class="btn btn-outline-success">Admin Listesi</a>
+			<a type="submit" href="/Admin/Mesajlar" class="btn btn-outline-danger">Mesajlar</a>
+		</div>
+	</div>
+</body>
+</html>

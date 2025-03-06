@@ -1,0 +1,72 @@
+﻿*{
+    margin :0;
+    padding :0 ;
+    box-sizing:border-box;
+     font-family:sans-serif;
+
+
+}
+body{
+
+    display : grid;
+    height: 90vh;
+    place-items: center;
+    background:linear-gradient(to right, #dfabc5 0%,
+    #1da1f2 100%);
+
+}
+
+.container{
+    background-color:whitesmoke;
+    max-width:100px;
+    width:90%;
+    padding: 175px 550px;
+    border-radius:5px;
+
+}
+.navbar {
+    position: fixed; /* Sabit konum */
+}
+.container form .title{
+    font-size:30px;
+    font-weight:600;
+    margin:20px 0 10px 0;
+    position:relative;
+}
+.container form .title:after {
+    content:'';
+    position: absolute;
+    height:4px;
+    width:33px;
+    left:0;
+    border-radius:5px;
+    background:#1da1f2;
+}
+
+.container form .input-box{
+    width:100%;
+    height:45px;
+    margin-top:25px;
+    position:relative;
+}
+
+
+.container form .underline:before{
+    position:absolute;
+    content:'';
+    height:2px;
+    width:100%;
+    background:#ccc;
+    left:0;
+    bottom:0;
+}
+.container form .underline:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    left: 0;
+    bottom: 0;
+    background:red;
+}

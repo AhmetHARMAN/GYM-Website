@@ -1,0 +1,607 @@
+﻿@model Mesaj
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="/images/about-img.png" rel="icon" type="image/x-icon" />
+    <title>Yahşi GYM</title>
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+          rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="/Home/Anasayfa">
+                        <img src="/images/logo.png" alt="" />
+                        <span>
+                            Yahşi GYM
+                        </span>
+                    </a>
+                    <div class="contact_nav" id="">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/İletişim">
+                                    <img src="/images/location.png" alt="" />
+                                    <span>Konum</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/İletişim">
+                                    <img src="/images/call.png" alt="" />
+                                    <span>Arayın : + 90 318 358 71 71</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/İletişim">
+                                    <img src="/images/envelope.png" alt="" />
+                                    <span>yahşigym@gmail.com</span>
+                                </a>
+                           
+                        </ul>
+                    </div>
+                     <div class="ml-auto">
+                        <ul class="navbar-nav">
+                            @if (User.Identity != null && User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" >Hoş Geldiniz, @User.Identity.Name</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Account/Logout">Çıkış Yap</a>
+                                </li>
+                            }
+                            else
+                            {@* 
+                                  <li class="nav-item"> 
+                                    <a class="nav-link" href="/Account/Login">Giriş Yap</a>
+                                </li>  *@
+                            }
+                        </ul>
+                    </div> 
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+        <!-- slider section -->
+        <section class=" slider_section position-relative">
+            <div class="container">
+                <div class="custom_nav2">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="d-flex  flex-column flex-lg-row align-items-center">
+                                <ul class="navbar-nav  ">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/Home/Anasayfa">Anasayfa <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Home/Hakkımızda">Hakkımızda </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Home/Hizmetlerimiz">Hizmetlerimiz </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Home/İletişim">Bize Ulaşın</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Account/Login">Giriş Yap</a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="slider_container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                                        <div class="detail-box">
+                                            <h2>
+                                                Hareket Geç
+                                            </h2>
+                                            <h1>
+                                                Spor Burada
+                                            </h1>
+                                            <p>
+                                              Hadi sen de daha fazla vakit kaybetmeden başla
+                                            </p>
+                                            <div class="btn-box">
+                                                <a href="#about" class="btn-1">
+                                                    Daha Fazla
+                                                </a>
+                                                <a href="/Home/İletişim" class="btn-2">
+                                                    Fiyat Al
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                                        <div class="detail-box">
+                                            <h2>
+                                                Durma
+                                            </h2>
+                                            <h1>
+                                                Acele Et
+                                            </h1>
+                                            <p>
+                                                Rakiplerin senden 1 adım öndeler
+                                            </p>
+                                            <div class="btn-box">
+                                                <a href="#about" class="btn-1">
+                                                    Daha Fazla
+                                                </a>
+                                                <a href="/Home/İletişim" class="btn-2">
+
+                                                    Fiyat Al
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                                        <div class="detail-box">
+                                            <h2>
+                                                Acı mı? Tanımıyorum
+                                            </h2>
+                                            <h1>
+                                                No Pain No Gain
+                                            </h1>
+                                            <p>
+                                               Acı yoksa Başarı da yoktur. 
+                                            </p>
+                                            <div class="btn-box">
+                                                <a href="#about" class="btn-1">
+                                                    Daha Fazla
+                                                </a>
+                                                <a href="/Home/İletişim" class="btn-2">
+
+                                                    Fiyat Al
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end slider section -->
+    </div>
+
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2 id="about">
+                    Yahşi GYM
+                </h2>
+            </div>
+            <div class="box">
+                <div class="img-box">
+                    <img src="/images/about-img.png" alt="" >
+                </div>
+                <div class="detail-box" >
+                    <p>
+                        "Spor salonumuz, hem yeni başlayanlar hem de deneyimli sporcular için ideal bir ortam sunar. Gelişmiş ekipmanlar, kişisel antrenör desteği ve zengin grup dersleriyle sağlıklı bir yaşam hedeflerinize ulaşabilirsiniz. Konforlu ve motive edici alanlarımızda, spor yapmayı bir yaşam tarzına dönüştürün."
+
+
+                    </p>
+                    <a href="#hizmet">
+                        Hizmetlerimiz
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end about section -->
+    <!-- service section -->
+
+    <section class="service_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2 id="hizmet">
+                    Hizmetlerimiz
+                </h2>
+            </div>
+            <div class="service_container" >
+                <div class="box">
+                    <img src="/images/s-1.jpg" alt="">
+                    <h6 class="visible_heading">
+                        CROSSFIT TRAINING
+                    </h6>
+                    <div class="link_box">
+                        <a href="">
+                            <img src="/images/link.png" alt="">
+                        </a>
+                        <h6>
+                            CROSSFIT TRAINING
+                        </h6>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="/images/s-2.jpg" alt="" >
+                    <h6 class="visible_heading">
+                        FITNESS
+                    </h6>
+                    <div class="link_box">
+                        <a href="">
+                            <img src="/images/link.png" alt="">
+                        </a>
+                        <h6>
+                            FITNESS
+                        </h6>
+                    </div>
+                </div>
+                <div class="box" >
+                    <img src="/images/s-3.jpg" alt="" >
+                    <h6 class="visible_heading">
+                        DYNAMIC STRENGTH TRAINING
+                    </h6>
+                    <div class="link_box">
+                        <a href="">
+                            <img src="/images/link.png" alt="">
+                        </a>
+                        <h6>
+                            DYNAMIC STRENGTH TRAINING
+                        </h6>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="/images/s-4.jpg" alt="">
+                    <h6 class="visible_heading">
+                        HEALTH
+                    </h6>
+                    <div class="link_box">
+                        <a href="">
+                            <img src="/images/link.png" alt="">
+                        </a>
+                        <h6>
+                            HEALTH
+                        </h6>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="/images/s-5.jpg" alt="">
+                    <h6 class="visible_heading">
+                        WORKOUT
+                    </h6>
+                    <div class="link_box">
+                        <a href="">
+                            <img src="/images/link.png" alt="">
+                        </a>
+                        <h6>
+                            WORKOUT
+                        </h6>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="/images/s-6.jpg" alt="">
+                    <h6 class="visible_heading">
+                        STRATEGIES
+                    </h6>
+                    <div class="link_box">
+                        <a href="">
+                            <img src="/images/link.png" alt="">
+                        </a>
+                        <h6>
+                            STRATEGIES
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end service section -->
+    <!-- Us section -->
+
+    <section class="us_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Neden Bizi Tercih Etmelisiniz?
+                </h2>
+            </div>
+            <div class="us_container">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="/images/u-1.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                           KALİTELİ EKİPMANLAR
+                        </h5>
+                        <p>
+                            Son teknoloji ekipmanlar ile tüm vücut geliştirme sürecinizi destekliyoruz
+                        </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img-box">
+                        <img src="/images/u-2.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            SAĞLIKLI BESLENME PLANI
+                        </h5>
+                        <p>
+                            Uzman diyetisyenlerimiz ile kişiye özel beslenme programları ile vucüt yağ oranınızı dengeliyoruz
+                        </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img-box">
+                        <img src="/images/u-3.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            DUŞ SERVİSLERİ
+                        </h5>
+                        <p>
+                            Uzman hijyen testlerinden geçen duş servisimizde sağlığınızı düşünüyoruz.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- end us section -->
+    <!-- client section -->
+
+    <section class="client_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                   Müşteri Yorumları
+                </h2>
+            </div>
+            <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="/images/client.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Polat A.
+                                </h5>
+                                <p>
+                                    "Spor salonuna ilk kez gelmeme rağmen, ekip gerçekten çok yardımseverdi. Hocalar her adımda destek oldular ve kişisel hedeflerime uygun bir program hazırladılar. Ayrıca ekipmanlar oldukça modern ve temiz. Kesinlikle tavsiye ederim!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="/images/client.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Memati B.
+                                </h5>
+                                <p>
+                                    "Uzun zamandır böyle bir salon arıyordum! Grup dersleri hem eğlenceli hem de oldukça etkili. Ortam motive edici, çalışanlar güler yüzlü ve her zaman destek oluyorlar. Burada kendimi çok rahat hissediyorum."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="/images/client.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Behzat Ç.
+                                </h5>
+                                <p>
+                                    "Spor yapmayı sevmeyen biri olarak, buradaki atmosfer fikrimi tamamen değiştirdi. Eğitmenler inanılmaz ilgili ve programlar gerçekten etkili. Düzenli olarak gelmeye başladığımdan beri kendimi çok daha sağlıklı ve zinde hissediyorum."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- end client section -->
+    <!-- result section -->
+
+    <section class="result_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 px-0">
+                    <div class="img-box">
+                        <img src="/images/result-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="detail-box">
+                        <h2>
+                            EN İYİ SONUÇLARI <br>
+                            ALMAK İÇİN YAPILDI
+                        </h2>
+                        <p>
+                            "Spor salonumuz, en iyi sonuçları almanız için modern ekipmanlar, bilimsel yöntemler ve profesyonel eğitmen desteğiyle tasarlandı. Her seviyeden sporcunun ihtiyaçlarına uygun,
+                            etkili ve keyifli bir deneyim sunuyoruz. Hedeflerinize ulaşmanız için yanınızdayız!"
+                        <a href="#fiyat">
+                            Fiyat Al
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
+    <section class="info_section layout_padding2-top">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>
+                        Yahşi GYM
+                    </h6>
+                    <p>
+                        "Spor salonumuz, modern ekipmanları ve uzman eğitmenleriyle sağlıklı bir yaşam için en iyi ortamı sunar. Size özel antrenman programları ve grup dersleriyle hedeflerinize ulaşmanıza yardımcı oluyoruz. Dinamik ve motive edici bir atmosferle spor yapmayı keyifli hale getiriyoruz."
+                    </p>
+                </div>
+                <div class="col-md-2 offset-md-1 offs">
+                    <h6>
+                        Menü
+                    </h6>
+                    <ul>
+                        <li class=" active">
+                            <a class="" href="/Home/Anasayfa">Anasayfa <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="/Home/Hakkımızda">Hakkımızda </a>
+                        </li>
+                        <li class="">
+                            <a class="" href="/Home/Hizmetlerimiz">Hizmetlerimiz </a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#fiyat">Bize Ulaşın</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 offset-md-1">
+                    <h6>
+                        Bize Ulaşın
+                    </h6>
+                    <div class="info_link-box">
+                        <a href="">
+                            <img src="/images/location-white.png" alt="">
+                            <span>No.58 Yenişehir Mah. Yahşihan Kırıkkale</span>
+                        </a>
+                        <a href="">
+                            <img src="/images/call-white.png" alt="">
+                            <span>+90 0318 358 7171</span>
+                        </a>
+                        <a href="">
+                            <img src="/images/mail-white.png" alt="">
+                            <span> yahşigym@gmail.com</span>
+                        </a>
+                    </div>
+                    <div class="info_social">
+                        <div>
+                            <a href="">
+                                <img src="/images/facebook-logo-button.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <img src="/images/twitter-logo-button.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <img src="/images/linkedin.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <img src="/images/instagram.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="container-fluid footer_section ">
+        <p>
+            &copy; 2025 Bütün Hakları Saklıdır. Design by
+            <a href="https://html.design/">Ahmet Harman</a>
+        </p>
+    </section>
+    <!-- footer section -->
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").classList.toggle("menu_width");
+            document
+                .querySelector(".custom_menu-btn")
+                .classList.toggle("menu_btn-style");
+        }
+    </script>
+</body>
+
+</html>
